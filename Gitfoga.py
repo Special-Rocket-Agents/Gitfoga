@@ -13,7 +13,7 @@ while True:
     if repo_name == None:
         repo = input("Please put your desired repository with its full name e.g. (octocat/Spoon-Knife) >>> ")
     else:
-        repo = "octocat/Spoon-Knife"
+        repo = "Special-Rocket-Agents/Gitfoga"
     if repo == "": repo = "octocat/Spoon-Knife"
     reqout = requests.get("https://api.github.com/repos/" + repo)
     j = json.loads(reqout.text)
