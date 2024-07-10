@@ -2,14 +2,18 @@ import time
 import requests
 import colorama
 import json
+import os
 from colorama import Fore, Back, Style
 IXE = None
-
+repo_name = os.getenv('REPO_NAME')
 print("Welcome to " + Fore.RED + "Gitfoga" + Fore.RESET + "!")
 print("Proud work of Arezalgamer89")
 
 while True:
-    repo = input("Please put your desired repository with its full name e.g. (octocat/Spoon-Knife) >>> ")
+    if repo_name == None:
+        repo = input("Please put your desired repository with its full name e.g. (octocat/Spoon-Knife) >>> ")
+    else:
+        repo = "octocat/Spoon-Knife"
     if repo == "": repo = "octocat/Spoon-Knife"
     reqout = requests.get("https://api.github.com/repos/" + repo)
     j = json.loads(reqout.text)
