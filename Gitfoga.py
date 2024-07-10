@@ -40,3 +40,5 @@ while True:
     except requests.exceptions.ProxyError:
         print(Fore.RED + "Something is wrong with Internet. Please try again" + Fore.RESET)
     print("-----------------------------------------------------------------")
+    if repo_name != None:
+        break
